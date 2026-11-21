@@ -54,7 +54,7 @@ CHECKPOINT='./artifacts/submission/validation_checkpoint.pt'
 THRESHOLDS='./artifacts/submission/thresholds.json'
 DATA_THROUGH='2026-11-21T04:00:00Z'
 PREDICTION_TIME='2026-11-21T04:00:00Z'
-OUTPUT='output_315551063.csv'
+OUTPUT='output.csv'
 ```
 
 ```bash
