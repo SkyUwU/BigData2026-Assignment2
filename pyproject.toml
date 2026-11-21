@@ -1,0 +1,31 @@
+[project]
+name = "bigdata-assignment2-work"
+version = "0.1.0"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pandas>=3.1.0",
+    "pyarrow>=26.0.0",
+]
+
+[project.optional-dependencies]
+local-cu132 = ["torch==2.14.0"]
+remote-cu121 = ["torch==2.5.1"]
+
+[tool.uv]
+conflicts = [[{ extra = "local-cu132" }, { extra = "remote-cu121" }]]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu132", extra = "local-cu132" },
+    { index = "pytorch-cu121", extra = "remote-cu121" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu132"
+url = "https://download.pytorch.org/whl/cu132"
+explicit = true
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
